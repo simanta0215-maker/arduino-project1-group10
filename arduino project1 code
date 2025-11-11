@@ -1,0 +1,34 @@
+int LED = 13; // Declares an integer variable "LED" to store the digital pin number (8)
+
+// Step#2: Adding an integer variable named "counter" to track the number of blinks
+int counter = 0; // Initializing the counter variable to start from 0
+
+void setup()
+{
+  // Put our setup code here, to run once:
+  pinMode(LED, OUTPUT); // Setting LED pin as an OUTPUT
+
+ 
+  Serial.begin(9600); // Opens serial port and sets data rate to 9600 bps
+}
+
+void loop()
+{
+  // Put our main code here, to run repeatedly:
+
+  // Step#3: Increment the loop counter by 1 in every iteration.
+  counter = counter + 1; // Alternative shorthand: counter++;
+
+ 
+  Serial.print("Blink Number # "); // Printing text value only (String)
+  Serial.println(counter);         // Printing the counter value on a new line
+
+  // Turning the LED on
+  digitalWrite(LED, HIGH);
+  delay(1000); // Waiting for 1000ms (1 second) with LED ON
+
+  // Turning the LED off
+  digitalWrite(LED, LOW);
+  delay(500); // Waiting for 500ms (0.5 seconds) with LED OFF
+}
+
